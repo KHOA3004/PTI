@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1007</width>
+    <height>852</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(33, 36, 41);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>60</y>
+      <width>501</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code ExtraLight</family>
+      <pointsize>22</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 220);</string>
+    </property>
+    <property name="text">
+     <string>TẠO TÀI KHOẢN CỦA BẠN</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>200</y>
+      <width>311</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code ExtraLight</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 220);</string>
+    </property>
+    <property name="text">
+     <string>Ussername</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_username">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>260</y>
+      <width>541</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(57, 60, 68);
+border-radius: 5 ptx;
+color: rgb(228, 216, 200);</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_password">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>410</y>
+      <width>541</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(57, 60, 68);
+border-radius: 5 ptx;
+color: rgb(228, 216, 200);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>340</y>
+      <width>301</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code ExtraLight</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 220);</string>
+    </property>
+    <property name="text">
+     <string>Password</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>490</y>
+      <width>301</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code ExtraLight</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 220);</string>
+    </property>
+    <property name="text">
+     <string>Quốc gia cư trú</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="cb_Month">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>560</y>
+      <width>541</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(57, 60, 68);
+border-radius: 5 ptx;
+color: rgb(228, 216, 200);</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>Arabic</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Bulgarian</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Chinese (Simplified)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Chinese (Traditional)</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Czech</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Danish</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Dutch</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>English</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Finnish</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>French</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>German</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Greek</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Hungarian</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Indonesian</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Italian</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Japanese</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Korean</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Norwegian</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Polish</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Portuguese</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Portuguese-Brazil
+</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Romanian</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Russian</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Spanish</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Swedish</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Thai</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Turkish</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Ukrainian</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Vietnamese</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QCheckBox" name="checkBox">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>640</y>
+      <width>931</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>10</pointsize>
+      <weight>87</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(228, 216, 200);
+font: 700 10pt &quot;Segoe UI&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Tôi 13 tuổi hoặc lớn hơn và đồng ý với điều khoản trong thỏa thuận người đăng ký  và chính sách bảo mật.</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_SignIn">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>690</y>
+      <width>261</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>12</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(25, 153, 255);
+color: rgb(241, 230, 255);</string>
+    </property>
+    <property name="text">
+     <string>TIẾP TỤC</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_goLogin">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>760</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>9</pointsize>
+      <underline>true</underline>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:rgb(175, 175, 175);</string>
+    </property>
+    <property name="text">
+     <string>I have an acount!!</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1007</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
