@@ -1,18 +1,1 @@
-[
-    {
-        "id_game": "1",
-        "name_game": "Conan",
-        "date": "29/10/2004",
-        "score_ranking": "1",
-        "link_game": "https://www.youtube.com/playlist?list=PLKvoOwlacRoLbAmCd_0HsADRTCD4oo0Mv"
-    }
-    ,
-    {
-        "id_game": "2",
-        "name_game": "1",
-        "date": "29/10/2004",
-        "score_ranking": "2",
-        "link_game": "https://www.youtube.com/playlist?list=PLKvoOwlacRoLbAmCd_0HsADRTCD4oo0Mv"
-    }
-]
-
+[]

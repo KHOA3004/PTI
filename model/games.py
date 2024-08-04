@@ -35,15 +35,18 @@ class ListGame:
         return self.list
     def add_games(self, Game):
         self.list.append(Game)
+        self.saveAllGames()
     def delete_games_by_name(self,name_game):
         for game in self.list:
-            if game.getname == name_game:
+            if game.getName() == name_game:
                 self.list.remove(game)
+        self.saveAllGames()
     def edit_game_by_name(self,name_old_game:str,new_game:Game):
         for game in self.list:
             if game.getName() == name_old_game:
                 self.list.remove(game)
                 self.list.append(new_game)
+        self.saveAllGames()
     def show_all_game(self):
         for i in self.list:
             i.show()
@@ -58,7 +61,7 @@ class ListGame:
             print("The file 'data/games.json' was not found.")
         except json.JSONDecodeError:
             print("The file 'data/games.json' does not contain valid JSON data.")
-    def saveAllMovies(self):
+    def saveAllGames(self):
         jsonfile = list()
         for game in self.list:
             jsonfile.append(game.__dict__)
