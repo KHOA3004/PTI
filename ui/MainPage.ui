@@ -14,11 +14,11 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton_add">
+   <widget class="QPushButton" name="btnAddDialog">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>150</y>
+      <x>390</x>
+      <y>220</y>
       <width>93</width>
       <height>28</height>
      </rect>
@@ -27,11 +27,11 @@
      <string>Add</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_delete">
+   <widget class="QPushButton" name="btnDelete">
     <property name="geometry">
      <rect>
       <x>110</x>
-      <y>140</y>
+      <y>220</y>
       <width>93</width>
       <height>28</height>
      </rect>
@@ -40,11 +40,11 @@
      <string>Delete</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_edit">
+   <widget class="QPushButton" name="btnEditDialog">
     <property name="geometry">
      <rect>
       <x>250</x>
-      <y>150</y>
+      <y>220</y>
       <width>93</width>
       <height>28</height>
      </rect>

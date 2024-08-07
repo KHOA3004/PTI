@@ -1,94 +1,99 @@
-from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QPushButton, QLabel,QDialog
+from PyQt6.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QPushButton,QLineEdit, QLabel, QDialog
 from PyQt6 import uic
+from PyQt6.QtCore import QDate, QDateTime
 import sys
-    
 
-
+from model.games import Game, ListGame
 from model.accounts import Account, ListAccounts
-from model.games import Game,ListGame
 from ui_py.ui_homedashboardform import Ui_MainWindow
 
 class AddDialog(QDialog):
     def __init__(self):
         super().__init__()
-        uic.loadUi("./ui/adddialog.ui",self)
-        self.btnBox.accepted.connect(self.addgames)
-    def addgames(self):
+        uic.loadUi("./ui/adddialog.ui", self)
+        self.btnBox.accepted.connect(self.addMovie)
+    def addMovie(self):
         self.l = ListGame()
         self.l.add_games(Game("Null",self.lineEdit_NewGame.text(),self.lineEdit_ReleaseDate.text(),self.lineEdit_ScoreRank.text(),self.lineEdit_URL.text()))
         home.callAfterInit()
         self.close()
 
-
-    
 class EditDialog(QDialog):
     def __init__(self):
         super().__init__()
+        self.oldGame = None
         uic.loadUi("./ui/editdialog.ui",self)
-        # def exit(self):
+        self.btnBox.accepted.connect(self.setNewGame)
 
+    def setOldMovie(self, game:Game):
+        # Dat Ten Objects cho dung
+        self.oldGame = game
+        self.txtName.setText(game.getName())
+        date_str = game.getDate()
+        date = QDate.fromString(date_str, "yyyy-MM-dd")
+        self.txtDate.setDate(date)
+        self.txtScore.setText(game.getScore())
+        self.txtUrl.setText(game.getLink())
 
-class HomeMenuDashBoard(QMainWindow,Ui_MainWindow):
+    def setNewGame(self):
+        # Xoa Movie cu
+        self.l = ListGame()
+        self.l.delete_game_by_name(self.oldGame.getName())
+        # Them Movie Moi
+        self.l.add_game(Game("Null", self.txtName.text(), self.txtDate.text(), self.txtScore.text(), self.txtUrl.text()))
+        home.callAfterInit()
+        self.close()
+
+    def exit(self):
+        self.close()
+
+class HomeMenuDashboard(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
         self.callAfterInit()
-        self.pushButton_add.clicked.connect(self.showadd)
-        self.pushButton_delete.clicked.connect(self.deleteGame)
+        self.btnDelete.clicked.connect(self.deleteGame)
+        self.btnEditDialog.clicked.connect(self.showEditDialog)
+        self.btnAddDialog.clicked.connect(self.showAddDialog)
     def deleteGame(self):
-        nameGameDelete = self.test.currentItem().text()
+        nameGameDetete = self.test.currentItem().text()
         self.test.takeItem(self.test.currentRow())
-        self.l.delete_games_by_name(nameGameDelete)
+        self.l.delete_game_by_name(nameGameDetete)
         self.callAfterInit()
-    def showadd(self):
+    def showAddDialog(self):
         add.show()
+    def showEditDialog(self):
+        if self.test.currentRow():
+            edit.show()
+            edit.setOldGame(self.l.getGameByName(self.test.currentItem().text()))
+        
     def callAfterInit(self):
         self.l = ListGame()
+        # thêm tất cả tên của đối tương Movie vào List
         self.test.clear()
         for mov in self.l.getAllGames():
             self.test.addItem(mov.getName())
-
-
-
-
-class LoginView(QMainWindow):
-    def __init__(self) :
-        super().__init__()
-        uic.loadUi("./ui/LoginPage.ui", self)
-        self.l = ListAccounts()
-        self.btnLogin.clicked .connect(self.checklogin)
-    def checklogin(self):
-        if self.l.checkAccounts(Account(self.txtUserName.text(), self.txtPassWord.text(),)) == True:
-            #hien trang chu
-            self.close()
-        else:
-            print("Sai Tk hoac MK")
-
-class SignInView(QMainWindow):
-    def __init__(self):
-        self.l = ListAccounts()
-        self.btnSignIn.connect(self.addAccount)
-    def addAccount(self):
-        self.l.addAccount(Account(self.txtUserName.text(), self.txtPassWord.text()))
         
 
-# import pygame 
-# pygame. init()
-# my_sound = pygame. mixer. Sound('D:/BiBongBenh/Downloads/Nhạc nền vui của Độ mixi.mp3')
-
-
-
-# l.showAllAccount()
+    
 
 if __name__ == "__main__":
-    # my_sound.play()
     app = QApplication(sys.argv)
-    home = HomeMenuDashBoard()
+    home = HomeMenuDashboard()
     add = AddDialog()
-    edit= EditDialog()
-    home.show()# login = LoginView()
-    # login.show()
+    edit = EditDialog()
+    home.show()
     app.exec()
+    
+
+
+
+
+
+
+
+
+
 
 
 
@@ -107,4 +112,4 @@ if __name__ == "__main__":
 #     app = QApplication(sys.argv)
 #     window = MainWindow()
 #     window.show()
-#     sys.exit(app.exec())\
+#     sys.exit(app.exec())
