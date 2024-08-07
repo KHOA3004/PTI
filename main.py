@@ -40,7 +40,7 @@ class EditDialog(QDialog):
         self.l = ListGame()
         self.l.delete_game_by_name(self.oldGame.getName())
         # Them Movie Moi
-        self.l.add_game(Game("Null", self.txtName.text(), self.txtDate.text(), self.txtScore.text(), self.txtUrl.text()))
+        self.l.add_game(Game("Null", self.lineEdit_NewGame.text(), self.lineEdit_NewReleaseDate.text(), self.lineEdit_ScoreRanking.text(), self.lineEdit_EditURL.text()))
         home.callAfterInit()
         self.close()
 
@@ -58,7 +58,7 @@ class HomeMenuDashboard(QMainWindow, Ui_MainWindow):
     def deleteGame(self):
         nameGameDetete = self.test.currentItem().text()
         self.test.takeItem(self.test.currentRow())
-        self.l.delete_game_by_name(nameGameDetete)
+        self.l.delete_games_by_name(nameGameDetete)
         self.callAfterInit()
     def showAddDialog(self):
         add.show()
