@@ -2,14 +2,14 @@
      {
           "id_game": "Null",
           "name_game": "d",
-          "date": "d",
-          "score_ranking": "d",
-          "link_game": "d"
+          "date": "",
+          "score_ranking": "",
+          "link_game": ""
      },
      {
           "id_game": "Null",
-          "name_game": "d",
-          "date": "d",
+          "name_game": "FIFAII",
+          "date": "1/1/2000",
           "score_ranking": "d",
           "link_game": "d"
      }

@@ -14,7 +14,7 @@ class AddDialog(QDialog):
         self.btnBox.accepted.connect(self.addMovie)
     def addMovie(self):
         self.l = ListGame()
-        self.l.add_games(Game("Null",self.lineEdit_NewGame.text(),self.lineEdit_ReleaseDate.text(),self.lineEdit_ScoreRank.text(),self.lineEdit_URL.text()))
+        self.l.add_games(Game("Null",self.lineEdit_NameGame.text(),self.lineEdit_ReleaseDate.text(),self.lineEdit_ScoreRank.text(),self.lineEdit_URL.text()))
         home.callAfterInit()
         self.close()
 
@@ -25,22 +25,22 @@ class EditDialog(QDialog):
         uic.loadUi("./ui/editdialog.ui",self)
         self.btnBox.accepted.connect(self.setNewGame)
 
-    def setOldMovie(self, game:Game):
+    def setOldGame(self, game:Game):
         # Dat Ten Objects cho dung
         self.oldGame = game
-        self.txtName.setText(game.getName())
+        self.lineEdit_NewNameGame.setText(game.getName())
         date_str = game.getDate()
         date = QDate.fromString(date_str, "yyyy-MM-dd")
-        self.txtDate.setDate(date)
-        self.txtScore.setText(game.getScore())
-        self.txtUrl.setText(game.getLink())
+        self.lineEdit_NewReleaseDate.setDate(date)
+        self.lineEdit_ScoreRanking.setText(game.getScore())
+        self.lineEdit_EditURL.setText(game.getLink())
 
     def setNewGame(self):
         # Xoa Movie cu
         self.l = ListGame()
-        self.l.delete_game_by_name(self.oldGame.getName())
+        self.l.delete_games_by_name(self.oldGame.getName())
         # Them Movie Moi
-        self.l.add_game(Game("Null", self.lineEdit_NewGame.text(), self.lineEdit_NewReleaseDate.text(), self.lineEdit_ScoreRanking.text(), self.lineEdit_EditURL.text()))
+        self.l.add_games(Game("Null", self.lineEdit_NewNameGame.text(), self.lineEdit_NewReleaseDate.text(), self.lineEdit_ScoreRanking.text(), self.lineEdit_EditURL.text()))
         home.callAfterInit()
         self.close()
 

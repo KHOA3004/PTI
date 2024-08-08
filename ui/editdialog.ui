@@ -126,25 +126,11 @@
     <string>Edit URL</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_NewGame">
+  <widget class="QLineEdit" name="lineEdit_NewNameGame">
    <property name="geometry">
     <rect>
      <x>430</x>
      <y>90</y>
-     <width>311</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgb(57, 60, 68);
-color: rgb(249, 255, 255);</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_NewReleaseDate">
-   <property name="geometry">
-    <rect>
-     <x>430</x>
-     <y>160</y>
      <width>311</width>
      <height>31</height>
     </rect>
@@ -213,6 +199,19 @@ color: rgb(249, 255, 255);</string>
    </property>
    <property name="standardButtons">
     <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+   </property>
+  </widget>
+  <widget class="QDateEdit" name="lineEdit_NewReleaseDate">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>170</y>
+     <width>311</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(255, 255, 255);</string>
    </property>
   </widget>
  </widget>

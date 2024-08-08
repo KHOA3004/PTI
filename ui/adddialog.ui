@@ -126,7 +126,7 @@
     <string>URL</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_NewGame">
+  <widget class="QLineEdit" name="lineEdit_NameGame">
    <property name="geometry">
     <rect>
      <x>470</x>

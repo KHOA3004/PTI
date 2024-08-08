@@ -36,6 +36,10 @@ class ListGame:
     def add_games(self, Game):
         self.list.append(Game)
         self.saveAllGames()
+    def getGameByName(self, name_game):
+        for game in self.list:
+            if game.getName() == name_game:
+                return game
     def delete_games_by_name(self,name_game):
         for game in self.list:
             if game.getName() == name_game:
