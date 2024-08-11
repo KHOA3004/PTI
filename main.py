@@ -55,6 +55,13 @@ class HomeMenuDashboard(QMainWindow, Ui_MainWindow):
         self.btnDelete.clicked.connect(self.deleteGame)
         self.btnEditDialog.clicked.connect(self.showEditDialog)
         self.btnAddDialog.clicked.connect(self.showAddDialog)
+        self.btnSearch.clicked.connect(self.searchGame)
+    def searchGame(self):
+        valueSearch = self.txtValueSearch.text()
+        dataSearch = self.l.searchGameaByName(valueSearch)
+        self.test.clear()
+        for mov in dataSearch:
+            self.test.addItem(mov.getName())
     def deleteGame(self):
         nameGameDetete = self.test.currentItem().text()
         self.test.takeItem(self.test.currentRow())
@@ -73,6 +80,11 @@ class HomeMenuDashboard(QMainWindow, Ui_MainWindow):
         self.test.clear()
         for mov in self.l.getAllGames():
             self.test.addItem(mov.getName())
+class SortingPage(QMainWindow,Ui_MainWindow):
+    def __init__(self):
+        super().__init__()
+        uic.loadUi("./ui/Sorting Page.ui",self)
+
         
 
     
@@ -82,6 +94,7 @@ if __name__ == "__main__":
     home = HomeMenuDashboard()
     add = AddDialog()
     edit = EditDialog()
+    sort = SortingPage()
     home.show()
     app.exec()
     
