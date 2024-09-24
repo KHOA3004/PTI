@@ -1,16 +1,26 @@
 [
-     {
-          "id_game": "Null",
-          "name_game": "FIFAI",
-          "date": "",
-          "score_ranking": "",
-          "link_game": ""
-     },
-     {
-          "id_game": "Null",
-          "name_game": "BATOCOM",
-          "date": "",
-          "score_ranking": "",
-          "link_game": ""
-     }
+      {
+            "id_game": "Null",
+            "name_game": "Free Fire",
+            "date": "",
+            "score_ranking": "",
+            "link_game": "",
+            "img": "C:/Users/ADMIN/OneDrive/Desktop/PTI/animation-video.jpg"
+      },
+      {
+            "id_game": "Null",
+            "name_game": "CS2",
+            "date": "1/1/2000",
+            "score_ranking": "",
+            "link_game": "https://www.counter-strike.net/cs2",
+            "img": "C:/Users/ADMIN/OneDrive/Desktop/PTI/img/CS2.jpg"
+      },
+      {
+            "id_game": "Null",
+            "name_game": "hello",
+            "date": "",
+            "score_ranking": "",
+            "link_game": "",
+            "img": "C:/Users/ADMIN/OneDrive/Desktop/PTI/img/CS2.jpg"
+      }
 ]

@@ -21,7 +21,7 @@
     <property name="geometry">
      <rect>
       <x>80</x>
-      <y>60</y>
+      <y>80</y>
       <width>501</width>
       <height>91</height>
      </rect>
@@ -113,7 +113,7 @@ color: rgb(228, 216, 200);</string>
      <string>Password</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
+   <widget class="QLabel" name="label_confirm">
     <property name="geometry">
      <rect>
       <x>80</x>
@@ -132,184 +132,8 @@ color: rgb(228, 216, 200);</string>
      <string notr="true">color: rgb(255, 255, 220);</string>
     </property>
     <property name="text">
-     <string>Quốc gia cư trú</string>
+     <string>Confirm Password</string>
     </property>
-   </widget>
-   <widget class="QComboBox" name="cb_Month">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>560</y>
-      <width>541</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>0</width>
-      <height>0</height>
-     </size>
-    </property>
-    <property name="maximumSize">
-     <size>
-      <width>16777215</width>
-      <height>16777215</height>
-     </size>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(57, 60, 68);
-border-radius: 5 ptx;
-color: rgb(228, 216, 200);</string>
-    </property>
-    <item>
-     <property name="text">
-      <string>Arabic</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Bulgarian</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Chinese (Simplified)</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Chinese (Traditional)</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Czech</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Danish</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Dutch</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>English</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Finnish</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>French</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>German</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Greek</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Hungarian</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Indonesian</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Italian</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Japanese</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Korean</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Norwegian</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Polish</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Portuguese</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Portuguese-Brazil
-</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Romanian</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Russian</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Spanish</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Swedish</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Thai</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Turkish</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Ukrainian</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Vietnamese</string>
-     </property>
-    </item>
    </widget>
    <widget class="QCheckBox" name="checkBox">
     <property name="geometry">
@@ -383,6 +207,21 @@ color: rgb(241, 230, 255);</string>
     </property>
     <property name="text">
      <string>I have an acount!!</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_confirm_password_">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>560</y>
+      <width>541</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(57, 60, 68);
+border-radius: 5 ptx;
+color: rgb(228, 216, 200);</string>
     </property>
    </widget>
   </widget>

@@ -1,14 +1,3 @@
-class HinhChuNhat:
-    def __init__(self, chieudai = 6, chieurong = 7):
-        self.chieudai = chieudai
-        self.chieurong = chieurong
-    def TinhChuVi(self):
-        return (self.chieudai + self.chieurong )* 2
-    def TinhDienTich(self):
-        return self.chieudai * self.chieurong
-    def Show(self):
-        print(self.TinhChuVi())
-        print(self.TinhDienTich())
 
 class Accounts:
     def __init__(self,username  = "", password = ""):

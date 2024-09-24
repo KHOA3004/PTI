@@ -23,7 +23,7 @@ class ListAccounts:
     
     def addAccount(self, account):
         self.list.append(account.getUserName()+":"+account.getPassWord())
-        self.l.saveAllAccounts()
+        self.saveAllAccounts()
     def showAllAccount(self):
         print(self.list)
     def changePasswordAccount(self, username, oldpassword, newpassword):
