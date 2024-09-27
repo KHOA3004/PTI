@@ -1,26 +1,47 @@
 [
-      {
-            "id_game": "Null",
-            "name_game": "Free Fire",
-            "date": "",
-            "score_ranking": "",
-            "link_game": "",
-            "img": "C:/Users/ADMIN/OneDrive/Desktop/PTI/animation-video.jpg"
-      },
-      {
-            "id_game": "Null",
-            "name_game": "CS2",
-            "date": "1/1/2000",
-            "score_ranking": "",
-            "link_game": "https://www.counter-strike.net/cs2",
-            "img": "C:/Users/ADMIN/OneDrive/Desktop/PTI/img/CS2.jpg"
-      },
-      {
-            "id_game": "Null",
-            "name_game": "hello",
-            "date": "",
-            "score_ranking": "",
-            "link_game": "",
-            "img": "C:/Users/ADMIN/OneDrive/Desktop/PTI/img/CS2.jpg"
-      }
+       {
+              "id_game": "Null",
+              "name_game": "CS2",
+              "date": "12/12/2023",
+              "score_ranking": "10",
+              "link_game": "https://www.counter-strike.net/cs2",
+              "img": "C:/Users/ADMIN/OneDrive/Desktop/PTI/img/CS2.jpg",
+              "link_trailer": "https://www.youtube.com/watch?v=nSE38xjMLqE"
+       },
+       {
+              "id_game": "Null",
+              "name_game": "FF",
+              "date": "12/12/2023",
+              "score_ranking": "10",
+              "link_game": "https://www.counter-strike.net/cs2",
+              "img": "C:/Users/ADMIN/OneDrive/Desktop/PTI/img/CS2.jpg",
+              "link_trailer": "\"C:\\Users\\ADMIN\\OneDrive\\Desktop\\PTI\\y2meta.com-Counter-Strike 2 - Launch Trailer.mp4\""
+       },
+       {
+              "id_game": "Null",
+              "name_game": "1",
+              "date": "12/12/2023",
+              "score_ranking": "10",
+              "link_game": "https://www.counter-strike.net/cs2",
+              "img": "C:/Users/ADMIN/OneDrive/Desktop/PTI/img/CS2.jpg",
+              "link_trailer": "\"C:\\Users\\ADMIN\\OneDrive\\Desktop\\PTI\\y2meta.com-Counter-Strike 2 - Launch Trailer.mp4\""
+       },
+       {
+              "id_game": "Null",
+              "name_game": "2",
+              "date": "",
+              "score_ranking": "",
+              "link_game": "",
+              "img": "",
+              "link_trailer": "Trailer"
+       },
+       {
+              "id_game": "Null",
+              "name_game": "hello",
+              "date": "",
+              "score_ranking": "",
+              "link_game": "",
+              "img": "",
+              "link_trailer": "Trailer"
+       }
 ]

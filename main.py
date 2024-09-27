@@ -86,9 +86,9 @@ class AddDialog(QDialog):
 
     def addGame(self):
         self.l = ListGame()
-        self.l.add_games(Game("Null",self.lineEdit_NameGame.text(),self.lineEdit_ReleaseDate.text(),self.lineEdit_ScoreRank.text(),self.lineEdit_URL.text(),self.txtImage.text()))
+        self.l.add_games(Game("Null",self.lineEdit_NameGame.text(),self.lineEdit_ReleaseDate.text(),self.lineEdit_ScoreRank.text(),self.lineEdit_URL.text(),self.txtImage.text(),self.lineEdit_Trailer.text()))
         home.callAfterInit()
-        sort.loadDataObjects()
+        library.loadDataObjects()
         self.close()
 
 class EditDialog(QDialog):
@@ -112,15 +112,18 @@ class EditDialog(QDialog):
         date = QDate.fromString(date_str, "yyyy-MM-dd")
         self.lineEdit_NewReleaseDate.setDate(date)
         self.lineEdit_ScoreRanking.setText(game.getScore())
+        self.txtImage.setText(game.getImg())
         self.lineEdit_EditURL.setText(game.getLink())
+        self.lineEdit_Trailer.setText(game.getLinkTrailer())
 
     def setNewGame(self):
         # Xoa Movie cu
         self.l = ListGame()
         self.l.delete_games_by_name(self.oldGame.getName())
         # Them Movie Moi
-        self.l.add_games(Game("Null", self.lineEdit_NewNameGame.text(), self.lineEdit_NewReleaseDate.text(), self.lineEdit_ScoreRanking.text(), self.lineEdit_EditURL.text(),self.txtImage.text()))
+        self.l.add_games(Game("Null", self.lineEdit_NewNameGame.text(), self.lineEdit_NewReleaseDate.text(), self.lineEdit_ScoreRanking.text(), self.lineEdit_EditURL.text(),self.txtImage.text(), self.lineEdit_Trailer.text()))
         home.callAfterInit()
+        library.loadDataObjects()
         self.close()
 
     def exit(self):
@@ -190,18 +193,60 @@ class Library(QMainWindow,Ui_Library):
         super().__init__()
         self.setupUi(self)
         self.l = ListGame()
+        self.loadDataObjects()
         self.callAfterInit()
         self.list_game.itemDoubleClicked.connect(self.showInfoGames)
         self.btn_Home.clicked.connect(self.showHome)
         self.btnInstall.clicked.connect(self.openlinkInstall)
+        self.pushButton_5.clicked.connect(self.openlinktrailer)
         self.btn_ADMIN.clicked.connect(self.showAdmin)
         self.btn_INTRO.clicked.connect(self.showIntro)
         self.btn_LOGOUT.clicked.connect(self.showLogout)
+        self.pushButton_3.clicked.connect(self.searchGame)
+        self.btnVoice.clicked.connect(self.searchGameByVoice)
+        self.pushButton_2.clicked.connect(self.sort)
+        self.type_sort = "name"
+        
+    
+    def sort(self):
+        self.x = ListGame()
+        # clear value into list Widget
+        self.list_game.clear()
+        if self.type_sort == "name":
+            self.x.sortByName()
+            self.type_sort = "score"
+        elif self.type_sort == "score":
+            self.x.sortByScore()
+            self.type_sort = "date"
+        elif self.type_sort == "date":
+            self.x.sortByDate()
+            self.type_sort = "name"    
+        # add Items
+        for game in self.x.getAllGames():
+            self.list_game.addItem(game.getName())
+
+
+    def openlinktrailer(self):
+        self.stackedWidget.setCurrentIndex(1)
+        namegame = self.list_game.currentItem().text()
+        game = self.l.getGameByName(namegame)
+        game.open_trailer()
 
     def openlinkInstall(self):
-        webbrowser.openlink("https://www.rockstargames.com/gta-v")
+        self.stackedWidget.setCurrentIndex(1)
+        namegame = self.list_game.currentItem().text()
+        game = self.l.getGameByName(namegame)
+        game.open_game()
+
     def showInfoGames(self):
         self.stackedWidget.setCurrentIndex(1)
+        namegame = self.list_game.currentItem().text()
+        game = self.l.getGameByName(namegame)
+        # doi hinh
+        self.label_8.setPixmap(QtGui.QPixmap(game.getImg()))
+        # doi ten game
+        self.btnNameGame.setText(game.getName())
+                               
     def showHome(self):
         self.stackedWidget.setCurrentIndex(0)
     
@@ -221,15 +266,15 @@ class Library(QMainWindow,Ui_Library):
     def searchGameByVoice(self):
         valueSearch = speech_to_text()
         dataSearch = self.l.searchGameaByName(valueSearch)
-        self.test.clear()
+        self.list_game.clear()
         for mov in dataSearch:
-            self.test.addItem(mov.getName())
+            self.list_game.addItem(mov.getName())
     def searchGame(self):
         valueSearch = self.txtValueSearch.text()
         dataSearch = self.l.searchGameaByName(valueSearch)
-        self.test.clear()
+        self.list_game.clear()
         for mov in dataSearch:
-            self.test.addItem(mov.getName())
+            self.list_game.addItem(mov.getName())
     def deleteGame(self):
         nameGameDetete = self.test.currentItem().text()
         self.test.takeItem(self.test.currentRow())
@@ -248,6 +293,69 @@ class Library(QMainWindow,Ui_Library):
         self.list_game.clear()
         for game in self.l.getAllGames():
             self.list_game.addItem(game.getName())
+    
+    def loadDataObjects(self):
+        self.setupUi(self)
+        self.l = ListGame()
+        self.callAfterInit()
+        self.list_game.itemDoubleClicked.connect(self.showInfoGames)
+        self.btn_Home.clicked.connect(self.showHome)
+        self.btnInstall.clicked.connect(self.openlinkInstall)
+        self.pushButton_5.clicked.connect(self.openlinktrailer)
+        self.btn_ADMIN.clicked.connect(self.showAdmin)
+        self.btn_INTRO.clicked.connect(self.showIntro)
+        self.btn_LOGOUT.clicked.connect(self.showLogout)
+        self.pushButton_3.clicked.connect(self.searchGame)
+        self.btnVoice.clicked.connect(self.searchGameByVoice)
+        self.pushButton_2.clicked.connect(self.sort)
+        self.type_sort = "name"
+
+        for x in self.l.getAllGames():
+            self.widget_3 = QtWidgets.QWidget(parent=self.scrollAreaWidgetContents_3)
+            self.widget_3.setMinimumSize(QtCore.QSize(435, 636))
+            self.widget_3.setMaximumSize(QtCore.QSize(435, 636))
+            self.widget_3.setObjectName("widget_3")
+            self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.widget_3)
+            self.verticalLayout_2.setObjectName("verticalLayout_2")
+            self.widget_4 = QtWidgets.QWidget(parent=self.widget_3)
+            self.widget_4.setObjectName("widget_4")
+            self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.widget_4)
+            self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+            self.label_2 = QtWidgets.QLabel(parent=self.widget_4)
+            self.label_2.setMaximumSize(QtCore.QSize(300, 450))
+            self.label_2.setText("")
+            self.label_2.setPixmap(QtGui.QPixmap(x.getImg()))
+            self.label_2.setScaledContents(True)
+            self.label_2.setObjectName("label_2")
+            self.horizontalLayout_2.addWidget(self.label_2)
+            self.verticalLayout_2.addWidget(self.widget_4)
+            self.widget_7 = QtWidgets.QWidget(parent=self.widget_3)
+            self.widget_7.setObjectName("widget_7")
+            self.label_3 = QtWidgets.QLabel(parent=self.widget_7)
+            self.label_3.setGeometry(QtCore.QRect(60, 10, 191, 21))
+            font = QtGui.QFont()
+            font.setPointSize(10)
+            self.label_3.setFont(font)
+            self.label_3.setStyleSheet("color: rgb(175, 175, 162);")
+            self.label_3.setObjectName("label_3")
+            self.label_3.setText(x.getName())
+            self.verticalLayout_2.addWidget(self.widget_7)
+            self.widget_6 = QtWidgets.QWidget(parent=self.widget_3)
+            self.widget_6.setObjectName("widget_6")
+            self.widget_5 = QtWidgets.QWidget(parent=self.widget_6)
+            self.widget_5.setGeometry(QtCore.QRect(-10, 80, 383, 127))
+            self.widget_5.setObjectName("widget_5")
+            self.label_4 = QtWidgets.QLabel(parent=self.widget_6)
+            self.label_4.setGeometry(QtCore.QRect(100, 10, 191, 21))
+            font = QtGui.QFont()
+            font.setPointSize(10)
+            self.label_4.setFont(font)
+            self.label_4.setStyleSheet("color: rgb(175, 175, 162);")
+            self.label_4.setObjectName("label_4")
+            self.label_4.setText(str("Score:" + str(x.getScore()) +"/10"))
+            self.verticalLayout_2.addWidget(self.widget_6)
+            self.horizontalLayout.addWidget(self.widget_3)
+
 class SortingPage(QMainWindow,Ui_Sorting):
     def __init__(self):
         super().__init__()

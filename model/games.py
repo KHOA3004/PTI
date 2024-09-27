@@ -1,13 +1,14 @@
 import webbrowser, json
 # Movie Object
 class Game:
-    def __init__(self, id_game, name_game, date, score_ranking, link_game,img):
+    def __init__(self, id_game, name_game, date, score_ranking, link_game,img,link_trailer):
         self.id_game = id_game
         self.name_game = name_game
         self.date = date
         self.score_ranking = score_ranking
         self.link_game = link_game
         self.img = img
+        self.link_trailer = link_trailer
     #get properties 
     def getId(self):
         return self.id_game
@@ -22,13 +23,16 @@ class Game:
     
     def getImg(self):
         return self.img
-    
+    def getLinkTrailer(self):
+        return self.link_trailer
     def show(self):
         print(self.id_game, "-", self.name_game, "-", self.date, "-", self.score_ranking, "-", self.link_game,"-",self.img)
     # def update(self, id, name, date, score_ranking, link_movie):
     #     ...
     def open_game(self):
         webbrowser.open(self.link_game)
+    def open_trailer(self):
+        webbrowser.open(self.link_trailer)
 
 
 class ListGame:
@@ -63,7 +67,7 @@ class ListGame:
             with open("./data/games.json", "r") as file:
                 jsonfile = json.load(file)
                 for game in jsonfile:
-                    game = Game(game["id_game"], game["name_game"], game["date"], game["score_ranking"], game["link_game"],game["img"])
+                    game = Game(game["id_game"], game["name_game"], game["date"], game["score_ranking"], game["link_game"],game["img"], game["link_trailer"])
                     self.add_games(game)
         except FileNotFoundError:
             print("The file 'data/games.json' was not found.")
@@ -74,7 +78,7 @@ class ListGame:
         for game in self.list:
             jsonfile.append(game.__dict__)
         with open("data/games.json", "w") as file:
-            json.dump(jsonfile, file, indent = 6)
+            json.dump(jsonfile, file, indent = 7)
     def searchGameaByName(self,name)->list:
         result = []
         for game in self.list:
@@ -82,3 +86,12 @@ class ListGame:
                 result.append(game)
                 game.show()
         return result
+    def sortByName(self):
+        self.list.sort(key=lambda game:game.getName().lower())
+        self.show_all_game()
+    def sortByScore(self):
+        self.list.sort(key=lambda game:game.getScore(), reverse=True)
+        self.show_all_game()
+    def sortByDate(self):
+        self.list.sort(key=lambda game:game.getDate())
+        self.show_all_game()

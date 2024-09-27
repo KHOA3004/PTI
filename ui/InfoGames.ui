@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1529</width>
+    <width>1545</width>
     <height>924</height>
    </rect>
   </property>
@@ -376,6 +376,32 @@ font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
       </layout>
      </widget>
     </widget>
+    <widget class="QPushButton" name="btnVoice">
+     <property name="geometry">
+      <rect>
+       <x>330</x>
+       <y>70</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="contextMenuPolicy">
+      <enum>Qt::PreventContextMenu</enum>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../img/microphone-black-shape.png</normaloff>../img/microphone-black-shape.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>30</width>
+       <height>30</height>
+      </size>
+     </property>
+    </widget>
    </widget>
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
@@ -396,7 +422,7 @@ font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
      <number>0</number>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page_1">
      <widget class="Line" name="line_2">
@@ -472,6 +498,18 @@ font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
            <widget class="QWidget" name="widget_3" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>435</width>
+              <height>636</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>435</width>
+              <height>636</height>
+             </size>
+            </property>
             <layout class="QVBoxLayout" name="verticalLayout_2">
              <item>
               <widget class="QWidget" name="widget_4" native="true">
@@ -563,6 +601,18 @@ font: 75 10pt &quot;MS Shell Dlg 2&quot;;</string>
           </item>
           <item>
            <widget class="QWidget" name="widget_8" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>435</width>
+              <height>636</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>435</width>
+              <height>636</height>
+             </size>
+            </property>
             <layout class="QVBoxLayout" name="verticalLayout_3">
              <item>
               <widget class="QWidget" name="widget_9" native="true">
@@ -746,6 +796,30 @@ color: rgb(249, 249, 249);</string>
        <string>PLAY TRAILER</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="btnNameGame">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>290</y>
+        <width>181</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <underline>true</underline>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(133, 140, 155);</string>
+      </property>
+      <property name="text">
+       <string>Grand Theft Auto V</string>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>
@@ -754,7 +828,7 @@ color: rgb(249, 249, 249);</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1529</width>
+     <width>1545</width>
      <height>26</height>
     </rect>
    </property>
